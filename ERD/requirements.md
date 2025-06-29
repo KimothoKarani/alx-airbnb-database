@@ -1,6 +1,6 @@
 # ER Diagram
 
-Below is the core diagram. It shows the main entities—User, Property, Booking, Payment, Review, Message—and how they tie together.
+Below is the core diagram. It shows the main entities: User, Property, Booking, Payment, Review, Message, and how they tie together.
 
 ![Airbnb ERD](airbnb-erd.png)
 
