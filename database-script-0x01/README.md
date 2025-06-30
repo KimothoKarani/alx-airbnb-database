@@ -25,7 +25,6 @@ To set up the database using this script, follow these steps with a MySQL-compat
 2.  **Select the Database:**
     Before running the script, you must select the database you just created.
     ```sql
-
     USE alx_airbnb;
     ```
 

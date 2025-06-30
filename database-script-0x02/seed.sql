@@ -20,6 +20,7 @@ SET @host_wambui_id = 'a1b2c3d4-e5f6-7890-1234-567890abcdef';
 SET @host_okeyo_id = 'b2c3d4e5-f6a7-8901-2345-678901bcdef0';
 SET @guest_sandra_id = 'c3d4e5f6-a7b8-9012-3456-789012cdef01';
 SET @guest_ali_id = 'd4e5f6a7-b8c9-0123-4567-890123def012';
+SET @guest_simon_id = 'd575f6a7-b8c9-0123-4567-890123def012';
 SET @admin_user_id = 'e5f6a7b8-c9d0-1234-5678-901234ef0123';
 
 -- -----------------------------------------------------
@@ -45,6 +46,7 @@ INSERT INTO User (user_id, first_name, last_name, email, password_hash, phone_nu
 (@host_okeyo_id, 'Peter', 'Okeyo', 'peter.okeyo@example.com', 'hash_okeyo_pwd', '+254711987654', 'host'),
 (@guest_sandra_id, 'Sandra', 'Johnson', 'sandra.j@example.com', 'hash_sandra_pwd', '+1-202-555-0199', 'guest'),
 (@guest_ali_id, 'Ahmed', 'Ali', 'ahmed.ali@example.com', 'hash_ali_pwd', '+254733112233', 'guest'),
+(@guest_simon_id, 'Emmanuel', 'Afubwa', 'email@emaunuel.afubwa', 'hash_345_gh', '+254705554485', 'guest')
 (@admin_user_id, 'Admin', 'User', 'admin@alxairbnb.com', 'hash_admin_pwd', NULL, 'admin');
 
 

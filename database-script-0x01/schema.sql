@@ -132,3 +132,4 @@ CREATE INDEX idx_booking_user_id ON Booking(user_id);
 
 -- Index on booking_id in Payment for quick access to payment history.
 CREATE INDEX idx_payment_booking_id ON Payment(booking_id);
+
