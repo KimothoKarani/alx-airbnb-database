@@ -376,3 +376,5 @@ SELECT
         ORDER BY total_bookings DESC 
         ROWS UNBOUNDED PRECEDING
     )
+```
+
