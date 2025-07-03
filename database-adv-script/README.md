@@ -1,4 +1,4 @@
-[# Advanced SQL: Join Queries
+# Advanced SQL: Join Queries
 
 This directory contains the SQL script `joins_queries.sql`, which demonstrates the use of different types of SQL `JOIN` clauses to retrieve and combine data from multiple tables in the ALX Airbnb Clone database.
 
