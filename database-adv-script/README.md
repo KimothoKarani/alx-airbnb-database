@@ -201,53 +201,12 @@ CREATE INDEX idx_booking_user_date ON Booking(user_id, start_date);
 CREATE INDEX idx_property_location_price ON Property(location, pricepernight);
 ```
 
-## Expected Database Schema
-
-The queries assume the following table structure:
-
-### User Table
-- `user_id` (Primary Key)
-- `first_name`
-- `last_name`
-- `email`
-- `phone_number`
-
-### Property Table
-- `property_id` (Primary Key)
-- `host_id` (Foreign Key to User)
-- `name`
-- `location`
-- `pricepernight`
-
-### Booking Table
-- `booking_id` (Primary Key)
-- `user_id` (Foreign Key to User)
-- `property_id` (Foreign Key to Property)
-- `start_date`
-- `end_date`
-
-### Review Table
-- `review_id` (Primary Key)
-- `property_id` (Foreign Key to Property)
-- `user_id` (Foreign Key to User)
-- `rating`
-- `comment`
-
 ## Usage Instructions
 
 1. Ensure your database has the required tables and sample data
 2. Execute the queries in `subqueries.sql` one by one
 3. Analyze the results to understand subquery behavior
 4. Experiment with modifications to see how they affect performance
-
-## Learning Objectives
-
-By completing these exercises, you will:
-- Understand the difference between correlated and non-correlated subqueries
-- Learn when to use different types of subqueries
-- Practice writing complex SQL queries
-- Understand performance implications of different subquery approaches
-- Gain experience with advanced SQL concepts like EXISTS, IN, and aggregate functions in subqueries
 
 ## Common Pitfalls to Avoid
 
@@ -256,13 +215,6 @@ By completing these exercises, you will:
 3. **Incorrect correlation**: Ensure correlated subqueries reference the correct outer query columns
 4. **Missing GROUP BY**: When using aggregate functions in subqueries, ensure proper grouping
 
-## Next Steps
-
-After mastering these subqueries, consider exploring:
-- Window functions as alternatives to correlated subqueries
-- Common Table Expressions (CTEs) for complex queries
-- Query optimization techniques
-- Advanced JOIN operations
 
 # Advanced SQL Aggregations and Window Functions
 
