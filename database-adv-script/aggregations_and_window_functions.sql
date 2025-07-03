@@ -59,3 +59,31 @@ SELECT
 FROM
     PropertyBookingCounts;
 
+
+-- -----------------------------------------------------------------
+-- Query 3: Window Function (ROW_NUMBER)
+-- Objective: Assign a unique sequential number to properties based
+--            on the total number of bookings they have received.
+-- -----------------------------------------------------------------
+-- This is similar to RANK(), but ROW_NUMBER() assigns a unique number
+-- to every row, even if there are ties in the booking_count.
+WITH PropertyBookingCounts AS (
+    SELECT
+        p.property_id,
+        p.name,
+        p.location,
+        COUNT(b.booking_id) AS booking_count
+    FROM
+        Property AS p
+    LEFT JOIN
+        Booking AS b ON p.property_id = b.property_id
+    GROUP BY
+        p.property_id, p.name, p.location
+)
+SELECT
+    name,
+    location,
+    booking_count,
+    ROW_NUMBER() OVER (ORDER BY booking_count DESC) AS property_row_number
+FROM
+    PropertyBookingCounts;
