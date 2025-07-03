@@ -31,7 +31,7 @@ EXPLAIN ANALYZE
 SELECT *
 FROM bookings
 WHERE start_date >= '2025-01-01' AND start_date < '2025-04-01';
-
+```
 ### Performance Comparison
 
 | Scenario | Query Plan Analysis | Performance Impact |
@@ -39,9 +39,6 @@ WHERE start_date >= '2025-01-01' AND start_date < '2025-04-01';
 | Before Partitioning | The query planner would perform a full table scan on the entire, massive bookings table. It would have to read every single row from all years and check if its start_date falls within the Q1 2025 range. | Very Slow. Execution time would be directly proportional to the total size of the table, leading to high latency and resource consumption. |
 | After Partitioning | Thanks to partition pruning, the query planner immediately identifies that the requested date range falls entirely within the bookings_y2025 partition. It only scans the bookings_y2025 partition and completely ignores bookings_y2023, bookings_y2024, and bookings_default. | Extremely Fast. Execution time is proportional only to the size of the single 2025 partition, not the entire table. This results in a massive reduction in I/O, CPU usage, and query time. |
 
-Export to Sheets
-
-```
 
 ## 4\. Summary of Improvements
 
