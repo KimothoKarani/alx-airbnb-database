@@ -1,4 +1,4 @@
-# Advanced SQL: Join Queries
+[# Advanced SQL: Join Queries
 
 This directory contains the SQL script `joins_queries.sql`, which demonstrates the use of different types of SQL `JOIN` clauses to retrieve and combine data from multiple tables in the ALX Airbnb Clone database.
 
@@ -55,3 +55,35 @@ UNION
 SELECT u.user_id, u.first_name, b.booking_id, b.status
 FROM User AS u
 RIGHT JOIN Booking b ON u.user_id = b.user_id;
+```
+# Advanced SQL: Practicing Subqueries
+
+This document provides the solutions and explanations for the subquery practice task. The goal is to write both non-correlated and correlated subqueries to answer specific business questions about the Airbnb clone database.
+
+---
+
+## 1. Understanding Subqueries
+
+A subquery is a `SELECT` statement nested inside another query. It helps solve complex problems by breaking them down.
+
+* **Non-Correlated Subquery:**
+    * An independent, inner query that runs **only once**.
+    * Its result (a single value or a list) is used by the outer query.
+    * It's simple and generally fast.
+
+* **Correlated Subquery:**
+    * A dependent, inner query that relies on the outer query.
+    * It runs **repeatedly**, once for each row processed by the outer query.
+    * It's powerful for row-by-row checks but can be slower.
+
+---
+
+## 2. Task Solutions
+
+The following queries fulfill the project requirements.
+
+### Task 1: Find properties with an average rating greater than 4.0
+
+* **Objective:** To filter properties based on a calculated average from another table.
+* **Method:** This requires a **correlated subquery** because the average rating must be calculated for *each specific property*.
+
